@@ -49,6 +49,6 @@ tm_setup -vv vm deploy
 git clone tm_framework_tests
 cd /tm_framework_tests
 chmod +x tm_test_framework.py
-python TMsTestFramework.py
+python tm_test_framework.py
 
 #############################################################
