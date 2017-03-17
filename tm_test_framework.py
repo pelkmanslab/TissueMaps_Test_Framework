@@ -3,7 +3,8 @@
 """
 Created on Tue Mar 14 16:30:36 2017
 
-@author: saadiaiftikhar
+@author: Saadia Iftikhar, saadia.iftikhar@fmi.ch
+
 """
 
 
