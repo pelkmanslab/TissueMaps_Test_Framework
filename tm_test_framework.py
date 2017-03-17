@@ -44,7 +44,7 @@ client = TmClient
 
 class TMsTestFramework(unittest.TestCase):
     
-    def __init__(self,host,port,username,password):
+    def __init__(self):
         
         '''
         Initialize the tm test framework with experiment description.
@@ -84,7 +84,7 @@ class TMsTestFramework(unittest.TestCase):
         shutil.copy(handles, handles_path)    
     
     
-    def main(self):
+    def test_workflow(self):
         
         '''Test the different stages of tissuemaps framework.
         '''
@@ -182,8 +182,14 @@ class TMsTestFramework(unittest.TestCase):
 #        self.assertEqual(result.returncode, 0)
 
 
-TM_Test = TMsTestFramework(host,port,username,password)
-TMsTestFramework.__init__
-TMsTestFramework.main(TM_Test)
+if __name__=='__main__':
+    
+    client = TmClient
+    TMsTestFramework.test_workflow()
+    
+    
+#TM_Test = TMsTestFramework(host,port,username,password)
+#TMsTestFramework.__init__
+#TMsTestFramework.main(TM_Test)
    
 #
