@@ -48,7 +48,8 @@ class TMsTestFramework(unittest.TestCase):
     def __init__(self,host,port,username,password):
         
         '''
-        Initialize the tm test framework with experiment description.'''
+        Initialize the tm test framework with experiment description.
+        '''
         
         super(TMsTestFramework,self).__init__(host,port,username,password)
         
@@ -64,7 +65,10 @@ class TMsTestFramework(unittest.TestCase):
         
     
     def age_file(self,filepath, aging=600):
-        '''Make last modification and access time of the file look older.'''
+        
+        '''Make last modification and access time of the file look older.
+        '''
+        
         aging = int(aging)
         current_time = int(time.time())
         new_time = current_time - aging
@@ -72,7 +76,9 @@ class TMsTestFramework(unittest.TestCase):
         assert current_time - os.path.getmtime(filepath) >= aging
         
     def copy_config_files(self):
-        '''Copy yaml files into the project folder, eg. expectation.yml'''
+        
+        '''Copy yaml files into the project folder, eg. expectation.yml.
+        '''
         
         shutil.copy(workflow_filename, project_path)
         shutil.copy(ImageAnalysis_pipeline, project_path)
@@ -80,7 +86,9 @@ class TMsTestFramework(unittest.TestCase):
     
     
     def main(self):
-        '''Test the different stages of tissuemaps framework '''
+        
+        '''Test the different stages of tissuemaps framework.
+        '''
         
         # create a test environment 
         
