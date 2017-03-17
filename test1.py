@@ -55,7 +55,8 @@ data_directory = 'test_data_path'
 client = TmClient(host,port,experiment_name,username,password)
 client.creat_experiment(workflow_type, microscope_type, 
                                    plate_format, plate_acquisition_mode)
-    
+
+
 #def main():
 #        
 #        '''
