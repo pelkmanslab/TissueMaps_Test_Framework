@@ -50,7 +50,7 @@ handles = glob.glob(os.path.join(handles_path, '*.*'))
 #acq_name = 'acq1'
 #data_directory = 'test_data_path'
 
-def main(self):
+def main():
         
         '''
         Initialize the tm test framework with experiment description.
@@ -58,19 +58,19 @@ def main(self):
         
         # super(TMsTestFramework,self).__init__(self)
         
-        self.workflow_type = 'canonical'
-        self.microscope_type = 'cellvoyager'
-        self.plate_format = 384
-        self.plate_acquisition_mode = 'basic'
-        self.description = "test plate"
-        self.experiment_name = 'experiment_test_2D'
-        self.plate_name = 'plate1'
-        self.acq_name = 'acq1'
-        self.data_directory = 'test_data_path'
+        workflow_type = 'canonical'
+        microscope_type = 'cellvoyager'
+        plate_format = 384
+        plate_acquisition_mode = 'basic'
+        description = "test plate"
+        experiment_name = 'experiment_test_2D'
+        plate_name = 'plate1'
+        acq_name = 'acq1'
+        data_directory = 'test_data_path'
         
 
-        TmClient.create_experiment(self.workflow_type, self.microscope_type, 
-                                    self.plate_format, self.plate_acquisition_mode)
+        TmClient.create_experiment(workflow_type, microscope_type, 
+                                    plate_format, plate_acquisition_mode)
 
 
 client = TmClient
