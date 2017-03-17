@@ -91,7 +91,7 @@ class TMsTestFramework(unittest.TestCase):
         
         # create a test environment 
         
-        self.age_file(self,TIFF_FILES)
+        self.age_file(self,TIFF_FILES, 10)
         
         basepath = '/tmp/test'
         t = TestFileEnvironment(basepath, start_clear=False)
