@@ -36,9 +36,9 @@ project_name = 'testData'
 workflow_filename = "/home/ubuntu/testData/workflow_description.yml"
 ImageAnalysis_pipeline = os.path.join(MOCK_PATH, 'pipeline.yaml')
 project_path = os.path.join(ROOT, project_name)
-#TIFF_FILES = glob.glob(test_data_path + '/*.tif')
+TIFF_FILES = glob.glob(os.path.join(test_data_path , '*.tif'))
 handles_path = os.path.join(project_path, 'handles')
-handles = glob.glob(handles_path/'*.*')
+handles = glob.glob(os.path.join(handles_path, '*.*'))
 
 client = TmClient
 
@@ -63,7 +63,7 @@ class TMsTestFramework(unittest.TestCase):
         self.data_directory = 'test_data_path'
         
     
-    def age_file(self,filepath, aging=600):
+    def age_file(self,filepath, aging=10):
         
         '''Make last modification and access time of the file look older.
         '''
@@ -91,7 +91,7 @@ class TMsTestFramework(unittest.TestCase):
         
         # create a test environment 
         
-        #self.age_file(self,TIFF_FILES)
+        self.age_file(self,TIFF_FILES)
         
         basepath = '/tmp/test'
         t = TestFileEnvironment(basepath, start_clear=False)
