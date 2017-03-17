@@ -184,7 +184,7 @@ class TMsTestFramework(unittest.TestCase):
 
 if __name__=='__main__':
     
-    client = TmClient()
+    client = TmClient(host,port,experiment_name,username,password)
     client.creat_experiment()
     
 #    tm_test = TMsTestFramework()
