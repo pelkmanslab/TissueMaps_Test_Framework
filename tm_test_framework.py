@@ -21,7 +21,7 @@ import time
 from scripttest import TestFileEnvironment
 import shutil
 #from tmclient.api import tmclient
-from tmclient.api import TmCleint
+from tmclient import api
 
 import unittest
 
@@ -41,7 +41,7 @@ TIFF_FILES = list(glob.glob(test_data_path/'*.tif'))
 handles_path = os.path.join(project_path, 'handles')
 handles = list(glob.glob(handles_path/'*.*'))
 
-client = TmCleint()
+client = api.TmCleint()
 
 class TMsTestFramework(unittest.TestCase):
     
