@@ -50,7 +50,7 @@ class TMsTestFramework(unittest.TestCase):
         Initialize the tm test framework with experiment description.
         '''
         
-        super(TMsTestFramework,self).__init__(host,port,username,password)
+        # super(TMsTestFramework,self).__init__(self)
         
         self.workflow_type = 'canonical'
         self.microscope_type = 'cellvoyager'
