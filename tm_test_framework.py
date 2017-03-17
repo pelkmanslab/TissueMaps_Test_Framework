@@ -93,8 +93,8 @@ class TMsTestFramework(unittest.TestCase):
         
         # self.age_file(self,TIFF_FILES)
         
-        from tmclient.api import TmClient
-        client = TmClient
+#        from tmclient.api import TmClient
+#        client = TmClient
         
         basepath = '/tmp/test'
         t = TestFileEnvironment(basepath, start_clear=False)
@@ -183,5 +183,5 @@ class TMsTestFramework(unittest.TestCase):
 
 
 TM_Test = TMsTestFramework(host,port,username,password)
-TM_Test.main()    
+TmClient.main()    
 #
