@@ -178,4 +178,4 @@ class TMsTestFramework(unittest.TestCase):
 #                    expect_stderr=True)
 #        self.assertEqual(result.returncode, 0)
 
-TMsTestFramework(unittest.TestCase)
+TMsTestFramework(unittest.TestCase,host,port,username,password)
