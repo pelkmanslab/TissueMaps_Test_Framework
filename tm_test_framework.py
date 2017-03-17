@@ -183,5 +183,6 @@ class TMsTestFramework(unittest.TestCase):
 
 
 TM_Test = TMsTestFramework(host,port,username,password)
-TmClient.main()    
+TMsTestFramework.main()
+   
 #
