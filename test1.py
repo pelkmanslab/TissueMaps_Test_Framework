@@ -50,8 +50,6 @@ plate_name = 'plate1'
 acq_name = 'acq1'
 data_directory = 'test_data_path'
 
-TmClient.create_experiment()
-
 client = TmClient()
 client.creat_experiment(workflow_type, microscope_type, 
                                    plate_format, plate_acquisition_mode)
