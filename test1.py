@@ -38,7 +38,7 @@ TIFF_FILES = test_data_path
 handles_path = os.path.join(project_path, 'handles')
 handles = glob.glob(os.path.join(handles_path, '*.*'))
 
-client = TmClient
+# client = TmClient
 
 #workflow_type = 'canonical'
 #microscope_type = 'cellvoyager'
@@ -50,7 +50,7 @@ client = TmClient
 #acq_name = 'acq1'
 #data_directory = 'test_data_path'
 
-def main(self,host,port,username,password):
+def main(self):
         
         '''
         Initialize the tm test framework with experiment description.
@@ -73,4 +73,6 @@ def main(self,host,port,username,password):
                                     self.plate_format, self.plate_acquisition_mode)
 
 
-main()
+client = TmClient
+if __name__ == "__main__":
+    main()
