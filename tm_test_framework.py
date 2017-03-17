@@ -36,7 +36,7 @@ project_name = 'testData'
 workflow_filename = "/home/ubuntu/testData/workflow_description.yml"
 ImageAnalysis_pipeline = os.path.join(MOCK_PATH, 'pipeline.yaml')
 project_path = os.path.join(ROOT, project_name)
-TIFF_FILES = list(glob.glob(test_data_path/'*.tif'))
+TIFF_FILES = glob.glob(test_data_path/'*.tif')
 handles_path = os.path.join(project_path, 'handles')
 handles = glob.glob(handles_path/'*.*')
 
