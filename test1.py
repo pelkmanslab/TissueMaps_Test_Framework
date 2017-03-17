@@ -22,8 +22,10 @@ import shutil
 from tmclient.api import TmClient
 import unittest
 
-host = '172.23.102.218'
-port = 8002
+#host = '172.23.102.218'
+host='localhost'
+port=1111
+#port = 8002
 username = 'test'
 password = 123456
 
