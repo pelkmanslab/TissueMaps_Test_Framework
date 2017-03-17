@@ -21,8 +21,7 @@ import time
 from scripttest import TestFileEnvironment
 import shutil
 #from tmclient.api import tmclient
-from tmclient import api
-
+from tmclient.api import TmClient
 import unittest
 
 host = '172.23.102.218'
@@ -30,9 +29,9 @@ port = 8002
 username = 'test'
 password = 123456
 
-ROOT = os.path.dirname(__file__)
+ROOT = '/home/ubuntu/'
 MOCK_PATH = os.path.join(ROOT, 'mock')
-test_data_path = "/home/ubuntu/testData"
+test_data_path = "/home/ubuntu/testData/20170307_NUPReplicate_C22/"
 project_name = 'testData'
 workflow_filename = "/home/ubuntu/testData/workflow_description.yml"
 ImageAnalysis_pipeline = os.path.join(MOCK_PATH, 'pipeline.yaml')
@@ -41,7 +40,7 @@ TIFF_FILES = list(glob.glob(test_data_path/'*.tif'))
 handles_path = os.path.join(project_path, 'handles')
 handles = list(glob.glob(handles_path/'*.*'))
 
-client = api.TmCleint()
+client = TmClient
 
 class TMsTestFramework(unittest.TestCase):
     
