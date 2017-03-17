@@ -182,7 +182,8 @@ class TMsTestFramework(unittest.TestCase):
 #        self.assertEqual(result.returncode, 0)
 
 
-TM_Test = TMsTestFramework(host,port,username,password)
+#TM_Test = TMsTestFramework(host,port,username,password)
+TMsTestFramework.__init__
 TMsTestFramework.main()
    
 #
