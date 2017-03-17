@@ -22,9 +22,9 @@ import shutil
 from tmclient.api import TmClient
 import unittest
 
-#host = '172.23.102.218'
-host='localhost'
-port=1111
+host = '172.23.102.218'
+#host='localhost'
+port=80
 #port = 8002
 username = 'test'
 password = 123456
@@ -55,6 +55,15 @@ data_directory = 'test_data_path'
 client = TmClient(host,port,experiment_name,username,password)
 client.creat_experiment(workflow_type, microscope_type, 
                                    plate_format, plate_acquisition_mode)
+client.create_plate(plate_name, description='')
+
+client.create_acquisition(acq_name, description = '')
+
+client.get_microscope_files(plate_name, acq_name)
+
+client.upload_microscope_files(plate_name, acq_name,data_directory)
+
+client.upload_workflow_description(workflow_filename)
 
 
 #def main():
