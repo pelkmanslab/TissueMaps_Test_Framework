@@ -40,9 +40,11 @@ TIFF_FILES = glob.glob(os.path.join(test_data_path , '*.tif'))
 handles_path = os.path.join(project_path, 'handles')
 handles = glob.glob(os.path.join(handles_path, '*.*'))
 
-print handles
+#print handles
 
 client = TmClient
+
+print client
 
 class TMsTestFramework(unittest.TestCase):
     
