@@ -177,4 +177,5 @@ class TMsTestFramework(unittest.TestCase):
 #            .format(p=project_path),
 #                    expect_stderr=True)
 #        self.assertEqual(result.returncode, 0)
-        
+
+TMsTestFramework(unittest.TestCase)
