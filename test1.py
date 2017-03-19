@@ -41,7 +41,7 @@ TIFF_FILES = test_data_path
 handles_path = os.path.join(project_path, 'handles')
 handles = glob.glob(os.path.join(handles_path, '*.*'))
 
-client = TmClient
+#client = TmClient
 
 workflow_type = 'canonical'
 microscope_type = 'cellvoyager'
@@ -53,26 +53,35 @@ plate_name = 'plate1'
 acq_name = 'acq1'
 data_directory = 'test_data_path'
 
-#client = TmClient(host,port,experiment_name,username,password)
-#client.create_experiment(workflow_type, microscope_type, 
- #                                  plate_format, plate_acquisition_mode)
-#client.create_plate(plate_name, description='')
+client = TmClient(host,port,experiment_name,username,password)
+time.sleep(5) # delays for 5 seconds
 
-#client.create_acquisition(acq_name, description = '')
+client.create_experiment(workflow_type, microscope_type, 
+                                   plate_format, plate_acquisition_mode)
+time.sleep(60) # delays for 60 seconds
 
-#client.get_microscope_files(plate_name, acq_name)
+client.create_plate(plate_name, description='')
+time.sleep(60) # delays for 60 seconds
 
+client.create_acquisition(acq_name, description = '')
+time.sleep(60) # delays for 60 seconds
 
-#client.upload_microscope_files(plate_name, acq_name,data_directory)
+client.get_microscope_files(plate_name, acq_name)
+time.sleep(10) # delays for 10 seconds
 
-with open(workflow_filename, 'r') as stream:
+for i in range(10):
+    client.upload_microscope_files(plate_name, acq_name,data_directory)
+    
+time.sleep(10) # delays for 10 seconds
+
+with open(workflow_filename, 'r') as workflow_desc:
     try:
-        print(yaml.load(stream))
+        print(yaml.load(workflow_desc))
     except yaml.YAMLError as exc:
         print(exc)
 
-workflowd_description = dict(stream)
-client.upload_workflow_description(workflowd_description)
+workflowd_description = dict(workflow_desc)
+client.upload_workflow_description(client,workflowd_description)
 
 
 #def main():
