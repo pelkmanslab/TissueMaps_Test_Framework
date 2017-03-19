@@ -41,7 +41,7 @@ TIFF_FILES = test_data_path
 handles_path = os.path.join(project_path, 'handles')
 handles = glob.glob(os.path.join(handles_path, '*.*'))
 
-#client = TmClient
+client = TmClient
 
 workflow_type = 'canonical'
 microscope_type = 'cellvoyager'
@@ -58,13 +58,13 @@ time.sleep(5) # delays for 5 seconds
 
 client.create_experiment(workflow_type, microscope_type, 
                                    plate_format, plate_acquisition_mode)
-time.sleep(60) # delays for 60 seconds
+time.sleep(10) # delays for 60 seconds
 
 client.create_plate(plate_name, description='')
-time.sleep(60) # delays for 60 seconds
+time.sleep(10) # delays for 60 seconds
 
-client.create_acquisition(acq_name, description = '')
-time.sleep(60) # delays for 60 seconds
+client.create_acquisition(acq_name, description='')
+time.sleep(10) # delays for 60 seconds
 
 client.get_microscope_files(plate_name, acq_name)
 time.sleep(10) # delays for 10 seconds
