@@ -51,4 +51,47 @@ plate_format = 384
 plate_acquisition_mode = 'basic'
 description = "test plate"
 experiment_name = '2D'
--- INSERT --                                                                                                                                                                              1,1           Top
+plate_name = 'plate1'
+acq_name = 'acq1'
+data_directory = 'test_data_path'
+
+def test_workflow():
+
+    client = TmClient(host,port,experiment_name,username,password)
+    time.sleep(5) # delays for 5 seconds
+    client.create_experiment(workflow_type, microscope_type,
+                                    plate_format, plate_acquisition_mode)
+    time.sleep(120) # delays for 60 seconds
+
+    client.create_plate(plate_name, description='')
+    time.sleep(120) # delays for 60 seconds
+
+    client.create_acquisition(plate_name, acq_name, description='')
+    time.sleep(120) # delays for 60 seconds
+
+    client.get_microscope_files(plate_name, acq_name)
+    time.sleep(60) # delays for 10 seconds
+
+    for i in range(10):
+        client.upload_microscope_files(plate_name, acq_name, test_data_path)
+
+    time.sleep(30) # delays for 10 seconds
+
+    client.upload_workflow_description_file(workflow_filename)
+    
+    time.sleep(60)
+
+    client.upload_jterator_project_description_files(test_data_main)
+    time.sleep(60)
+
+    client.submit_workflow(description=None)
+
+    time.sleep(1200)
+
+    client.download_object_feature_values('Cells',
+            plate_name=None, well_name=None, well_pos_y=None, well_pos_x=None,
+            tpoint=None)
+
+
+
+test_workflow()
