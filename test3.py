@@ -61,32 +61,32 @@ def test_workflow():
     time.sleep(5) # delays for 5 seconds
     client.create_experiment(workflow_type, microscope_type,
                                     plate_format, plate_acquisition_mode)
-    time.sleep(120) # delays for 60 seconds
+    time.sleep(120) # delays for 120 seconds
 
     client.create_plate(plate_name, description='')
-    time.sleep(120) # delays for 60 seconds
+    time.sleep(120) # delays for 120 seconds
 
     client.create_acquisition(plate_name, acq_name, description='')
-    time.sleep(120) # delays for 60 seconds
+    time.sleep(120) # delays for 120 seconds
 
     client.get_microscope_files(plate_name, acq_name)
-    time.sleep(60) # delays for 10 seconds
+    time.sleep(60) # delays for 60 seconds
 
     for i in range(10):
         client.upload_microscope_files(plate_name, acq_name, test_data_path)
 
-    time.sleep(30) # delays for 10 seconds
+    time.sleep(30) # delays for 30 seconds
 
     client.upload_workflow_description_file(workflow_filename)
     
-    time.sleep(60)
+    time.sleep(60) # delays for 60 seconds
 
     client.upload_jterator_project_description_files(test_data_main)
-    time.sleep(60)
+    time.sleep(60) # delays for 60 seconds
 
     client.submit_workflow(description=None)
 
-    time.sleep(1200)
+    time.sleep(1200) # delays for 1200 seconds
 
     client.download_object_feature_values('Cells',
             plate_name=None, well_name=None, well_pos_y=None, well_pos_x=None,
