@@ -22,8 +22,10 @@ import shutil
 from tmclient.api import TmClient
 import unittest
 import yaml
+import csv
 
-host = '172.23.102.218'
+
+host = '172.23.103.166'
 port='80'
 username = 'test'
 password = '123456'
@@ -49,7 +51,7 @@ microscope_type = 'cellvoyager'
 plate_format = 384
 plate_acquisition_mode = 'multiplexing'
 description = "test multiplexing plate"
-experiment_name = 'Any_Multiplexing_Test_Automated'
+experiment_name = 'Andy_Multiplexing_Test_Automated'
 plate_name = 'plate1'
 acq_name1 = 'cycle2'
 acq_name2 = 'cycle3'
@@ -113,10 +115,9 @@ def test_workflow():
 
     time.sleep(1200) # delays for 1200 seconds
 
-    client.download_object_feature_values('Cells',
+    client.download_object_feature_values('cells',
             plate_name=None, well_name=None, well_pos_y=None, well_pos_x=None,
             tpoint=None)
-
 
 
 test_workflow()
