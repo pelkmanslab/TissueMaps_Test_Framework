@@ -33,7 +33,7 @@ MOCK_PATH = os.path.join(ROOT, 'mock')
 test_data_path = "/home/ubuntu/dorisp_fish_data/fish_data/"
 test_data_main = "/home/ubuntu/dorisp_fish/"
 project_name = 'Dorisp_Fish_Test_Data'
-workflow_filename = "/home/ubuntu/dorisp_fish/workflow_description.yml"
+workflow_filename = "/home/ubuntu/dorisp_fish_data/workflow_description.yml"
 ImageAnalysis_pipeline = os.path.join(MOCK_PATH, 'pipeline.yaml')
 project_path = os.path.join(ROOT, project_name)
 TIFF_FILES = test_data_path
@@ -44,7 +44,7 @@ client = TmClient
 
 workflow_type = 'canonical'
 microscope_type = 'cellvoyager'
-plate_format = 384
+plate_format = 96
 plate_acquisition_mode = 'basic'
 description = "test fish data"
 experiment_name = 'Dorisp_Fish_Test_Automated'
@@ -69,10 +69,10 @@ def test_workflow():
     client.get_microscope_files(plate_name, acq_name1)
     time.sleep(60) # delays for 60 seconds
 
-    for i in range(5):
+    for i in range(10):
         client.upload_microscope_files(plate_name, acq_name1, test_data_path)
 
-    time.sleep(30) # delays for 30 seconds
+    time.sleep(60) # delays for 30 seconds
     
     client.upload_workflow_description_file(workflow_filename)
     
@@ -85,7 +85,7 @@ def test_workflow():
 
     time.sleep(1200) # delays for 1200 seconds
 
-    client.download_object_feature_values('cells',
+    client.download_object_feature_values('Cells',
             plate_name=None, well_name=None, well_pos_y=None, well_pos_x=None,
             tpoint=None)
 
