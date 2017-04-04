@@ -85,7 +85,7 @@ def test_workflow():
 
     time.sleep(1200) # delays for 1200 seconds
 
-    client.download_object_feature_values('cells',
+    client.download_object_feature_values('Circles',
             plate_name=None, well_name=None, well_pos_y=None, well_pos_x=None,
             tpoint=None)
 
