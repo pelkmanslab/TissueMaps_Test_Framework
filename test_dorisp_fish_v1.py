@@ -31,7 +31,7 @@ password = '123456'
 ROOT = '/home/ubuntu/'
 MOCK_PATH = os.path.join(ROOT, 'mock')
 test_data_path = "/home/ubuntu/dorisp_fish_data/fish_data/"
-test_data_main = "/home/ubuntu/dorisp_fish/"
+test_data_main = "/home/ubuntu/dorisp_fish_data/"
 project_name = 'Dorisp_Fish_Test_Data'
 workflow_filename = "/home/ubuntu/dorisp_fish_data/workflow_description.yml"
 ImageAnalysis_pipeline = os.path.join(MOCK_PATH, 'pipeline.yaml')
@@ -47,7 +47,7 @@ microscope_type = 'cellvoyager'
 plate_format = 96
 plate_acquisition_mode = 'basic'
 description = "test fish data"
-experiment_name = 'Dorisp_Fish_Test_Automated'
+experiment_name = 'Doris_Fish_Test_Automated'
 plate_name = 'plate1'
 acq_name1 = 'acq1'
 data_directory1 = 'test_data_path'
@@ -83,7 +83,7 @@ def test_workflow():
 
     client.submit_workflow(description=None)
 
-    time.sleep(1200) # delays for 1200 seconds
+    time.sleep(600) # delays for 1200 seconds
 
     client.download_object_feature_values('Cells',
             plate_name=None, well_name=None, well_pos_y=None, well_pos_x=None,
@@ -92,3 +92,4 @@ def test_workflow():
 
 
 test_workflow()
+
