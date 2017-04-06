@@ -48,5 +48,21 @@ it is convenient to install  <a href="https://tox.readthedocs.io/en/latest/" ta
 pip install tox
 tox-quickstart   
 ``` 
+### Adding Build Step.
+Now we are ready to tell Jenkins how to perform the tests, adding directly the command line steps or the scripts which perfom the testing. In this picture, two scripts are listed one which download the updated Tissuemaps and one which is actually running a test. Go to the project and select "Configure"
 
-#
+
+In get_TM.sh, it is possible to deploy TM using Dockers or Ansible scripts:
+```
+#!/bin/bash
+
+#Clean previous versions
+rm -rf ~/tissuemaps
+
+#Download teh compose file
+wget https://raw.githubusercontent.com/tissuemaps/tissuemaps/master/docker-compose.yml -q -P ~/tissuemaps
+
+#Create and start containers
+cd ~/tissuemaps
+tm_deploy container build
+```
