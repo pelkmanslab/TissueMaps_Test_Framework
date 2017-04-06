@@ -50,7 +50,7 @@ tox-quickstart
 ``` 
 ### Adding Build Step.
 Now we are ready to tell Jenkins how to perform the tests, adding directly the command line steps or the scripts which perfom the testing. In this picture, two scripts are listed one which download the updated Tissuemaps and one which is actually running a test. Go to the project and select "Configure"
-![alt tag](https://ibb.co/kPffqa)
+![alt tag](https://image.ibb.co/cYzvOv/build.png)
 
 In get_TM.sh, it is possible to deploy TM using Dockers or Ansible scripts:
 ```
