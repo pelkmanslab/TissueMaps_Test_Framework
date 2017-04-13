@@ -48,6 +48,12 @@ it is convenient to install  <a href="https://tox.readthedocs.io/en/latest/" ta
 pip install tox
 tox-quickstart   
 ``` 
+Be aware that tox might install an old version of pip, which could not be able to find dependencies or other.
+It is advised to perform this hack:
+```
+pip install pip==8.1.1
+``` 
+
 ### Adding Build Step.
 Now we are ready to tell Jenkins how to perform the tests, adding directly the command line steps or the scripts which perfom the testing. In this picture, two scripts are listed one which download the updated Tissuemaps and one which is actually running a test. Go to the project and select "Configure"
 ![alt tag](https://image.ibb.co/cYzvOv/build.png)
